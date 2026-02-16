@@ -442,7 +442,7 @@ pnpm nx build api
 - ✅ Database seeder for roles, permissions, and sample data
 
 ### Not Completed / Tradeoffs
-- ❌ **Angular frontend (dashboard)** — not implemented; the assessment allows partial completion
+- ❌ **Angular frontend (dashboard)** — not implemented
 - ❌ **Drag-and-drop UI, dark mode, keyboard shortcuts** — frontend bonus features not started
 - ⚠️ **JWT refresh tokens** — access token is set in an HttpOnly cookie with 24h expiry; refresh token rotation is scaffolded (`refreshTokenHash` field on User) but not fully implemented
 - ⚠️ **TypeORM `synchronize: true`** — used for development convenience; production should use migrations

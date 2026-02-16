@@ -7,7 +7,7 @@
       root: __dirname,
 
   "outputPath": {
-    "base": "../dist/ui"
+    "base": "../../dist/ui"
   },
   "index": "./src/index.html",
   "browser": "./src/main.ts",

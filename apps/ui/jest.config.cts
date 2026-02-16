@@ -1,6 +1,6 @@
 module.exports = {
   displayName: 'ui',
-  preset: '../jest.preset.js',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: 'test-output/jest/coverage',
   transform: {

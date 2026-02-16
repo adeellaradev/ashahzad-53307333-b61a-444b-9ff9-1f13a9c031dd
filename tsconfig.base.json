@@ -16,6 +16,10 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@longquest/source"]
+    "customConditions": ["@ashahzad-task-manager/source"],
+    "paths": {
+      "@ashahzad-task-manager/data": ["libs/data/src/index.ts"],
+      "@ashahzad-task-manager/auth": ["libs/auth/src/index.ts"]
+    }
   }
 }

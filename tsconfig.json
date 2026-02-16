@@ -8,6 +8,12 @@
     },
     {
       "path": "./apps/api"
+    },
+    {
+      "path": "./libs/data"
+    },
+    {
+      "path": "./libs/auth"
     }
   ]
 }

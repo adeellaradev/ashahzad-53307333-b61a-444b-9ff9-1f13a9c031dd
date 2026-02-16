@@ -9,6 +9,12 @@ module.exports = {
       devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     }),
   },
+  resolve: {
+    alias: {
+      '@ashahzad-task-manager/data': join(__dirname, '../../libs/data/src/index.ts'),
+      '@ashahzad-task-manager/auth': join(__dirname, '../../libs/auth/src/index.ts'),
+    },
+  },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',

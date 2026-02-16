@@ -1,5 +1,5 @@
 {
-  "name": "@longquest/api",
+  "name": "@ashahzad-task-manager/api",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@longquest/api:build",
+          "buildTarget": "@ashahzad-task-manager/api:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@longquest/api:build:development"
+            "buildTarget": "@ashahzad-task-manager/api:build:development"
           },
           "production": {
-            "buildTarget": "@longquest/api:build:production"
+            "buildTarget": "@ashahzad-task-manager/api:build:production"
           }
         }
       },

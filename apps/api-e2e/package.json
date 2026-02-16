@@ -1,10 +1,10 @@
 {
-  "name": "@longquest/api-e2e",
+  "name": "@ashahzad-task-manager/api-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@longquest/api"
+      "@ashahzad-task-manager/api"
     ],
     "targets": {
       "e2e": {
@@ -17,8 +17,8 @@
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@longquest/api:build",
-          "@longquest/api:serve"
+          "@ashahzad-task-manager/api:build",
+          "@ashahzad-task-manager/api:serve"
         ]
       }
     }

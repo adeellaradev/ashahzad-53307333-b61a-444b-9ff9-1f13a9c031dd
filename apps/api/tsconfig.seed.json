@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2021",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "../..",
+    "skipLibCheck": true,
+    "strict": true,
+    "paths": {
+      "@ashahzad-task-manager/data": ["libs/data/src/index.ts"],
+      "@ashahzad-task-manager/auth": ["libs/auth/src/index.ts"]
+    }
+  },
+  "include": ["src/seed.ts"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}

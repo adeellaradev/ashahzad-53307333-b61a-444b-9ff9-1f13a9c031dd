@@ -18,14 +18,7 @@ export interface JwtPayload {
 }
 
 export interface AuthResponse {
-  user: {
-    id: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    roleId: string;
-    organizationId: string;
-  };
+  user: any;
   accessToken?: string;
 }
 
@@ -55,13 +48,19 @@ export class AuthService {
 
     await this.userRepository.save(user);
 
-    return this.generateAuthResponse(user);
+    // Load full user with relations
+    const fullUser = await this.userRepository.findOne({
+      where: { id: user.id },
+      relations: ['role', 'role.permissions', 'organization'],
+    });
+
+    return this.generateAuthResponse(fullUser!);
   }
 
   async login(loginDto: LoginDto): Promise<AuthResponse> {
     const user = await this.userRepository.findOne({
       where: { email: loginDto.email },
-      relations: ['role'],
+      relations: ['role', 'role.permissions', 'organization'],
     });
 
     if (!user) {
@@ -76,6 +75,10 @@ export class AuthService {
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
     }
+
+    // Update last login
+    user.lastLoginAt = new Date();
+    await this.userRepository.save(user);
 
     return this.generateAuthResponse(user);
   }
@@ -97,15 +100,11 @@ export class AuthService {
 
     const accessToken = this.jwtService.sign(payload);
 
+    // Return full user object with role and organization
+    const { password, refreshTokenHash, ...userWithoutSensitiveData } = user as any;
+
     return {
-      user: {
-        id: user.id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        roleId: user.roleId,
-        organizationId: user.organizationId,
-      },
+      user: userWithoutSensitiveData,
       accessToken,
     };
   }

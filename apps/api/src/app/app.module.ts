@@ -15,6 +15,8 @@ import { AppService } from './app.service';
 import { AuthModule } from '../auth/auth.module';
 import { TasksModule } from '../tasks/tasks.module';
 import { AuditModule } from '../audit/audit.module';
+import { UsersModule } from '../users/users.module';
+import { RolesModule } from '../roles/roles.module';
 import { AuditInterceptor } from '../audit/audit.interceptor';
 
 @Module({
@@ -36,6 +38,8 @@ import { AuditInterceptor } from '../audit/audit.interceptor';
     AuthModule,
     TasksModule,
     AuditModule,
+    UsersModule,
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [

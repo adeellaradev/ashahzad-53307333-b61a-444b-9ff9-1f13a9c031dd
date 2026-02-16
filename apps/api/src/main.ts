@@ -9,6 +9,12 @@ async function bootstrap() {
   const globalPrefix = 'api/v1';
   app.setGlobalPrefix(globalPrefix);
 
+  // Enable CORS for frontend
+  app.enableCors({
+    origin: 'http://localhost:4200',
+    credentials: true,
+  });
+
   app.use(cookieParser());
 
   app.useGlobalPipes(

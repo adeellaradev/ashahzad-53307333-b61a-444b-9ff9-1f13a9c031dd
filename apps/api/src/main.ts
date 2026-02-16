@@ -27,6 +27,7 @@ async function bootstrap() {
     .setTitle('Task Manager API')
     .setDescription('Secure Task Management System with RBAC')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/v1/docs', app, document);
